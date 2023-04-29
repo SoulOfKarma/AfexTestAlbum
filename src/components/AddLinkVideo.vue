@@ -13,7 +13,7 @@ import { firebaseApp } from "@/main";
 import { getFirestore, collection,addDoc,getDocs } from 'firebase/firestore';
 import bus from '@/eventBus';
 import moment from 'moment';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 export default {
   data() {
     return {
@@ -49,8 +49,8 @@ export default {
       }
 
       //Se obtienen datos para guardarlos en Firebase
-
-      const key = 'AIzaSyDJLIQY05TvOojdrwS4mM8QzhK-kRFGL5s'
+      
+      const key = import.meta.env.VITE_API_KEY
 
       axios
         .get(`https://www.googleapis.com/youtube/v3/videos?part=id&id=${res}&key=${key}&part=snippet,contentDetails`)
